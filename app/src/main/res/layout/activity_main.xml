@@ -1,18 +1,35 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#2C2C2C"
     tools:context=".MainActivity">
 
-    <TextView
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/idEditSearch"
+        android:layout_margin="4dp"
+        android:hint="Search Crypto"
+        android:textColor="@color/white"
+        android:textColorHint="@color/white" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/idEditSearch"
+        android:id="@+id/idRVCurrencies" />
+
+    <ProgressBar
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:id="@+id/idPBLoading"
+        android:layout_centerInParent="true"
+        android:visibility="gone" />
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+</RelativeLayout>
