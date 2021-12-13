@@ -22,6 +22,12 @@ public class CurrencyRVAdapter extends RecyclerView.Adapter<CurrencyRVAdapter.Vi
         this.context = context;
     }
 
+    public void filterList(ArrayList<CurrencyRVModel> filteredList) {
+        currencyRVModelArrayList = filteredList;
+        notifyDataSetChanged();
+    }
+
+
     @NonNull
     @Override
     public CurrencyRVAdapter.ViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
@@ -39,7 +45,7 @@ public class CurrencyRVAdapter extends RecyclerView.Adapter<CurrencyRVAdapter.Vi
 
     @Override
     public int getItemCount() {
-        return 0;
+        return currencyRVModelArrayList.size();
     }
 
     public class ViewHolder extends RecyclerView.ViewHolder {
@@ -50,7 +56,7 @@ public class CurrencyRVAdapter extends RecyclerView.Adapter<CurrencyRVAdapter.Vi
             super(itemView);
             currencyNameTV = itemView.findViewById(R.id.idTVCurrencyName);
             symbolTV = itemView.findViewById(R.id.idTVSymbol);
-            currencyNameTV = itemView.findViewById(R.id.idTVCurrencyRate);
+            rateTV = itemView.findViewById(R.id.idTVCurrencyRate);
         }
     }
 }

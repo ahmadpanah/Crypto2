@@ -8,11 +8,13 @@
     tools:context=".MainActivity">
 
     <EditText
+        android:id="@+id/idEditSearch"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/idEditSearch"
-        android:layout_margin="4dp"
+        android:layout_marginTop="4dp"
+        android:layout_marginBottom="4dp"
         android:hint="Search Crypto"
+        android:minHeight="48dp"
         android:textColor="@color/white"
         android:textColorHint="@color/white" />
 
